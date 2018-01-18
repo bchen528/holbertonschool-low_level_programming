@@ -1,6 +1,9 @@
 #include <stdio.h>
 
-/*prints string "with proper grammar, but the outcome is a piece of art,"*/
+/**
+ * main - the main function in C
+ * Return: 0, exit program
+*/
 
 int main(void)
 {
