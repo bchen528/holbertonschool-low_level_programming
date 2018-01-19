@@ -7,20 +7,20 @@
 
 int main(void)
 {
-char c = 0;
+	char c = 0;
 
-while (c < 10)
-{
-putchar('0' + c);
-c++;
-}
+	while (c < 10)
+	{
+		putchar('0' + c);
+		c++;
+	}
 
-c = 'a';
-while (c <= 'f')
-{
-putchar(c);
-c++;
-}
-putchar('\n');
-return (0);
+	c = 'a';
+	while (c <= 'f')
+	{
+		putchar(c);
+		c++;
+	}
+	putchar('\n');
+	return (0);
 }
