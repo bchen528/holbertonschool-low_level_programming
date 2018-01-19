@@ -8,6 +8,7 @@
 int main(void)
 {
 	int a, b = 0;
+
 	while (a <= 9)
 	{
 		while (b <= 9)
