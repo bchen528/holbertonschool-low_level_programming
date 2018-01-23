@@ -9,15 +9,29 @@
 
 void print_to_98(int n)
 {
-	while (n < 99)
+	while (n < 98)
 	{
-		_putchar(n + '0');
 		if (n != 98)
 		{
-			_putchar(',');
-			_putchar(' ');
+			printf("%d, ", n);
+		}
+		else
+		{
+			printf("%d", n);
 		}
 		n++;
 	}
-	_putchar('\n');
+	while (n > 97)
+	{
+		if (n != 98)
+		{
+			printf("%d, ", n);
+		}
+		else
+		{
+			printf("%d", n);
+		}
+		n--;
+	}
+	putchar('\n');
 }

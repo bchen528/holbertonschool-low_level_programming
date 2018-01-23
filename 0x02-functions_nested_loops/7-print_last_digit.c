@@ -3,7 +3,7 @@
 /**
  * print_last_digit - prints that last digit of a number
  * @n: type to be checked
- * Return: 0
+ * Return: n
  */
 
 int print_last_digit(int n)
