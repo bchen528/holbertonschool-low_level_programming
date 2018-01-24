@@ -8,19 +8,19 @@
 
 int main(void)
 {
-	int previousNum = 1;
-	int currentNum = 2;
-	int nextNum;
+	long previousNum = 1;
+	long currentNum = 2;
+	long nextNum;
 	int counter = 0;
 
-	printf("%d, ", previousNum);
-	printf("%d, ", currentNum);
+	printf("%ld, ", previousNum);
+	printf("%ld, ", currentNum);
 
-	while (counter <= 50)
+	while (counter <= 47)
 	{
 		nextNum = previousNum + currentNum;
-		printf("%d", nextNum);
-		if (counter != 50)
+		printf("%ld", nextNum);
+		if (counter != 47)
 		{
 			printf(", ");
 		}
