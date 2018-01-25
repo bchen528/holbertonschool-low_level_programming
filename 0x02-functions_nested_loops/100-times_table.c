@@ -1,6 +1,39 @@
 #include "holberton.h"
 
 /**
+ * print_three_space - print one comma and three spaces
+ */
+
+void print_three_space(void)
+{
+	_putchar(',');
+	_putchar(' ');
+	_putchar(' ');
+	_putchar(' ');
+}
+
+/**
+ * print_two_space - print one comma and two spaces
+ */
+
+void print_two_space(void)
+{
+	_putchar(',');
+	_putchar(' ');
+	_putchar(' ');
+}
+
+/**
+ * print_one_space - print one comma and one space
+ */
+
+void print_one_space(void)
+{
+	_putchar(',');
+	_putchar(' ');
+}
+
+/**
  * print_times_table - prints n times table
  * @n: determine which times table
  * Return: 0
@@ -10,51 +43,41 @@ void print_times_table(int n)
 {
 	int row, column;
 
-
 	if (n > 15 || n < 0)
-	{
 		return;
-	}
 
-        for (row = 0; row < (n + 1); row++) /* hold row number*/
-        {
-                for (column = 0; column < (n + 1); column++) /* change column number*/
-                {
-			if (((row * column) / 10) == 0) /* first of two digits is a 0, so it's a single digit*/
-                        {
-                                if (column != 0) /*if the column is not 0, put a ,   */
-                                {
-					_putchar(',');                 
-					_putchar(' ');
-                                        _putchar(' ');
-					_putchar(' ');
-                                }
-                                _putchar(((row * column) % 10) + '0'); /*prints product of row * column, last digit in character form*/ 
-                        }
-			else if (((row * column) / 100) == 0) /*prints 2 digits*/ 
+	for (row = 0; row < (n + 1); row++)
+	{
+		for (column = 0; column < (n + 1); column++)
+		{
+			if (((row * column) / 10) == 0)
 			{
-				if (column != 0) /*if not starting at first column, print 1 comma followed by two spaces*/
+				if (column != 0)
 				{
-					_putchar(',');
-					_putchar(' ');
-					_putchar(' ');
+					print_three_space();
 				}
-                                _putchar(((row * column) / 10) + '0'); /* print first digit*/
-                                _putchar(((row * column) % 10) + '0'); /*print second digit*/
-                        }
-			else if (((row * column) / 100) >= 1) /*for 3 digit numbers, truncate for first digit*/ 
-                        {
-                                if (column != 0) /* for 3 digit numbers, put , and one space*/
-                                {
-                                        _putchar(',');
-                                        _putchar(' ');
-                                }
-				_putchar(((row * column) / 100) + '0'); /*print first digit*/
-				_putchar((((row * column) / 10) % 10 ) + '0'); /* print second digit*/
-				_putchar(((row * column) % 10) + '0'); /*print third digit*/
+				_putchar(((row * column) % 10) + '0');
 			}
-		
-                }
-                _putchar('\n');
-        }
+			else if (((row * column) / 100) == 0)
+			{
+				if (column != 0)
+				{
+					print_two_space();
+				}
+				_putchar(((row * column) / 10) + '0');
+				_putchar(((row * column) % 10) + '0');
+			}
+			else if (((row * column) / 100) >= 1)
+			{
+				if (column != 0)
+				{
+					print_one_space();
+				}
+				_putchar(((row * column) / 100) + '0');
+				_putchar((((row * column) / 10) % 10) + '0');
+				_putchar(((row * column) % 10) + '0');
+			}
+		}
+		_putchar('\n');
+	}
 }
