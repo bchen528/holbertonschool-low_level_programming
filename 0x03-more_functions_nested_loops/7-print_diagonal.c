@@ -11,21 +11,16 @@ void print_diagonal(int n)
 
 	for (i = 0; i < n; i++)
 	{
-		if (n <= 0)
+		for (numSpace = 0; numSpace < i; numSpace++)
 		{
-			_putchar('\n');
-			return;
+			_putchar(' ');
 		}
-		else
-		{
-			for (numSpace = 0; numSpace < i; numSpace++)
-			{
-				_putchar(' ');
-			}
-			_putchar('\\');
-			_putchar('\n');
-		}
-	}
-	if (n >= 0)
+		_putchar('\\');
 		_putchar('\n');
+	}
+	if (n <= 0)
+	{
+		_putchar('\n');
+		return;
+	}
 }
