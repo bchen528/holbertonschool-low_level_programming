@@ -7,24 +7,19 @@
 
 void print_triangle(int size)
 {
-	int i, numHash;
-
-	for (i = 0; i < size; i++)
+	int w, h, b;
+	
+	for (h = 0; h < size; h++)
 	{
-		if (size <= 0)
+		for (w = 0; w < (size + 1); w++)
 		{
-			_putchar('\n');
+			_putchar(' ');
+			if (
+				_putchar('#');
+
 		}
-		else
-		{
-			for (numHash = 0; numHash < i; numHash--)
-			{
-				_putchar(' ');
-			}
-			_putchar('#');
-			_putchar('\n');
-		}
+		_putchar('\n');
 	}
-	if (size >= 0)
+	if (size <= 0)
 		_putchar('\n');
 }
