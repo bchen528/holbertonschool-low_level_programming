@@ -22,3 +22,8 @@ void print_line(int n);
 void print_diagonal(int n);
 void print_square(int size);
 void print_triangle(int size);
+void print_number(int n);
+void print_single_digit(int n);
+void print_double_digit(int n);
+void print_triple_digit(int n);
+void print_four_digit(int n);
