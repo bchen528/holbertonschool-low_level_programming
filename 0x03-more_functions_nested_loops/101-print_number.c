@@ -34,12 +34,19 @@ void print_number(int n)
 
 void print_single_digit(int n)
 {
+	unsigned int i;
+
 	if (n < 0)
 	{
-		_putchar('-');
 		n = n * -1;
+		i = n;
+		_putchar('-');
+		_putchar(i + '0');
 	}
-	_putchar(n + '0');
+	else
+	{
+		_putchar(n + '0');
+	}
 }
 
 /**
@@ -50,13 +57,21 @@ void print_single_digit(int n)
 
 void print_double_digit(int n)
 {
+	unsigned int i;
+
 	if (n < 0)
 	{
-		_putchar('-');
 		n = n * -1;
+		i = n;
+		_putchar('-');
+		_putchar((i / 10) + '0');
+		_putchar((i % 10) + '0');
 	}
-	_putchar((n / 10) + '0');
-	_putchar((n % 10) + '0');
+	else
+	{
+		_putchar((n / 10) + '0');
+		_putchar((n % 10) + '0');
+	}
 }
 
 /**
@@ -67,14 +82,23 @@ void print_double_digit(int n)
 
 void print_triple_digit(int n)
 {
+	unsigned int i;
+
 	if (n < 0)
 	{
-		_putchar('-');
 		n = n * -1;
+		i = n;
+		_putchar('-');
+		_putchar((i / 100) + '0');
+		_putchar(((i / 10) % 10) + '0');
+		_putchar((i % 10) + '0');
 	}
-	_putchar((n / 100) + '0');
-	_putchar(((n / 10) % 10) + '0');
-	_putchar((n % 10) + '0');
+	else
+	{
+		_putchar((n / 100) + '0');
+		_putchar(((n / 10) % 10) + '0');
+		_putchar((n % 10) + '0');
+	}
 }
 
 /**
@@ -85,13 +109,23 @@ void print_triple_digit(int n)
 
 void print_four_digit(int n)
 {
+	unsigned int i;
+
 	if (n < 0)
 	{
-		_putchar('-');
 		n = n * -1;
+		i = n;
+		_putchar('-');
+		_putchar((i / 1000) + '0');
+		_putchar(((i / 100) % 10) + '0');
+		_putchar(((i / 10) % 10) + '0');
+		_putchar((i % 10) + '0');
 	}
-	_putchar((n / 1000) + '0');
-	_putchar(((n / 100) % 10) + '0');
-	_putchar(((n / 10) % 10) + '0');
-	_putchar((n % 10) + '0');
+	else
+	{
+		_putchar((n / 1000) + '0');
+		_putchar(((n / 100) % 10) + '0');
+		_putchar(((n / 10) % 10) + '0');
+		_putchar((n % 10) + '0');
+	}
 }
