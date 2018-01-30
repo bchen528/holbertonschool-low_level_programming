@@ -8,8 +8,14 @@
 void puts2(char *str)
 {
 	int index = 0;
+	int length = 0;
 
-	while (index < 10)
+	while (str[length] != '\0')
+	{
+		length++;
+	}
+	length--;
+	while (index < length)
 	{
 		if (index % 2 == 0)
 		{
