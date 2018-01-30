@@ -15,7 +15,7 @@ void puts2(char *str)
 		length++;
 	}
 	length--;
-	while (index < length)
+	while (index <= length)
 	{
 		if (index % 2 == 0)
 		{
