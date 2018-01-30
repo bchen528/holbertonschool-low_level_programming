@@ -22,7 +22,7 @@ void puts_half(char *str)
 	{
 		index = length_of_the_string / 2;
 	}
-	while (index <= 10)
+	while (index < length_of_the_string)
 	{
 		_putchar(str[index]);
 		index++;
