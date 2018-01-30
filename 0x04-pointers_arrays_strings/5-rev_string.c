@@ -23,7 +23,6 @@ void rev_string(char *s)
 		rev[length - index] = s[index];
 		index--;
 	}
-
 	while (i <= length)
 	{
 		s[i] = rev[i];
