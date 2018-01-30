@@ -3,7 +3,7 @@
 /**
  * puts_half - prints half of a string
  * @str: parameter to be checked
- */ 
+ */
 
 
 void puts_half(char *str)
