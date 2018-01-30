@@ -10,7 +10,7 @@ void puts2(char *str)
 	int index = 0;
 
 	while (index < 10)
-	{	
+	{
 		if (index % 2 == 0)
 		{
 			_putchar(str[index]);
