@@ -2,36 +2,26 @@
 
 /**
  * *leet - encodes a string into 1337
+ * @s: parameter to be checked
  * Return: encoded string
  */
 
 char *leet(char *s)
 {
-	int i = 0;
+	char letter[] = {'a', 'A', 'e', 'E', 'o', 'O', 't', 'T', 'l', 'L'};
+	char number[] = {'4', '4', '3', '3', '0', '0', '7', '7', '1', '1'};
+	int i, j = 0;
 
 	while (s[i] != '\0')
 	{
-		if (s[i] == 'a' && s[i] == 'A')
+		while (letter[j] != '\0')
 		{
-			s[i] = '4';
-		}
-		else if (s[i] == 'e' && s[i] == 'E')
-		{
-			s[i] = '3';
-		}
-		else if (s[i] == 'o' && s[i] == 'O')
-		{
-			s[i] = '0';
-		}
-		else if (s[i] == 't' && s[i] == 'T')
-		{
-			s[i] = '7';
-		}
-		else if (s[i] == 'l' && s[i] == 'L')
-		{
-			s[i] = '1';
+			if (s[i] == letter[j])
+				s[i] = number[j];
+			j++;
 		}
 		i++;
+		j = 0;
 	}
 	return (s);
 }
