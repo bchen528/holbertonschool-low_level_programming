@@ -15,29 +15,33 @@ char *_strstr(char *haystack, char *needle)
 	char *p;
 	int count = 0;
 
-	while (haystack[i] != '\0')
+	while (needle[j] != '\0' && haystack[i] != '\0')
 	{
-		while (needle[j] != '\0')
+		if (haystack[i] == needle[j])
 		{
-			if (haystack[i] == needle[j])
-			{
-				i++;
-				j++;
-				p = &haystack[i];
-				count++;
-			}
-			else if (needle[j] != '\0' && haystack[i] != needle[j])
-			{
-				j = 0;
-				i++;
-			}
-			else
-			{
-				i++;
-			}
+			i++;
+			j++;
+			p = &haystack[i];
+			count++;
 		}
+		else if (needle[j] != '\0' && haystack[i] != needle[j])
+		{
+			j = 0;
+			i++;
+		}
+		else
+		{
+			i++;
+		}
+	}
+	if (needle[j] == '\0')
+	{
 		return (p - count);
 	}
-	p = &haystack[i];
-	return (p);
+	else if (haystack[i] == '\0')
+	{
+		p = &haystack[i];
+		return (p);
+	}
+	return (0);
 }
