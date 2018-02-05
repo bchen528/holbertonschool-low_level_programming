@@ -25,6 +25,10 @@ char *_strchr(char *s, char c)
 			i++;
 		}
 	}
-	j = &s[i];
-	return (j);
+	if (c == '\0')
+	{
+		j = &s[i];
+		return (j);
+	}
+	return (0);
 }
