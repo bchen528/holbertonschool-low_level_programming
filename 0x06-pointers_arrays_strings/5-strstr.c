@@ -24,14 +24,9 @@ char *_strstr(char *haystack, char *needle)
 			p = &haystack[i];
 			count++;
 		}
-		else if (needle[j] != '\0' && haystack[i] != needle[j])
+		else if (needle[j] != '\0')
 		{
 			j = 0;
-			i++;
-			count = 0;
-		}
-		else
-		{
 			i++;
 			count = 0;
 		}
