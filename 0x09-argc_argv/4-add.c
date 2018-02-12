@@ -16,14 +16,15 @@ int main(int argc, char *argv[])
 
 	for (i = 1; i < argc; i++)
 	{
-		if (!(*argv[i] >= 48 && *argv[i] <= 57) && *argv[0] != '\0')
+		if (*argv[0] == '\0')
+		{
+			printf("%d\n", 0);
+			return (0);
+		}
+		else if (!(*argv[i] >= 48 && *argv[i] <= 57) && *argv[0] != '\0')
 		{
 			printf("Error\n");
 			return (1);
-		}
-		else if (*argv[0] == '\0')
-		{
-			printf("%d\n", 0);
 		}
 		else
 		{
