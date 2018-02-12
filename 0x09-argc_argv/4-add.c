@@ -14,23 +14,24 @@ int main(int argc, char *argv[])
 	int i;
 	int pos_sum = 0;
 
-	if (*argv[0] == '\0')
+	if (argc == 1)
 	{
 		printf("%d\n", 0);
-		return (0);
 	}
-
-	i = 1;
-	while (i < argc)
+	else
 	{
-		if (!(*argv[i] >= 48 && *argv[i] <= 57))
+		i = 1;
+		while (i < argc)
 		{
-			printf("Error\n");
-			return (1);
+			if (!(*argv[i] >= 48 && *argv[i] <= 57))
+			{
+				printf("Error\n");
+				return (1);
+			}
+			pos_sum += atoi(argv[i]);
+			i++;
 		}
-		pos_sum += atoi(argv[i]);
-		i++;
+		printf("%d\n", pos_sum);
 	}
-	printf("%d\n", pos_sum);
 	return (0);
 }
