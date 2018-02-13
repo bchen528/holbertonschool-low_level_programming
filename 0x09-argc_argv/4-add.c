@@ -2,13 +2,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+int check_args(char *argv);
 /**
  * check_args - check if string for numbers and non numbers
  * @argv: the string to be analyzed
  * Return: 1 if number, 0 if non-number
  */
 
-int check_args(argv[i])
+int check_args(char *argv)
 {
 	int i = 0;
 
