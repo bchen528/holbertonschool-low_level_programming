@@ -1,4 +1,4 @@
-#0x01. C- Variables, if, else, while
+# 0x01. C- Variables, if, else, while
 
 //0. assign a random number to the variable n each time it is executed and print whether number stored is + or -
 
