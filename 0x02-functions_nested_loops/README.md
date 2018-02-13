@@ -24,12 +24,12 @@
 
 //11. prints all natural numbers from n to 98
 
-//12. print n times table
+//100. print n times table
 
-//13. compute and print sum of all multiples of 3 or 5 below 1024
+//101. compute and print sum of all multiples of 3 or 5 below 1024
 
-//14. print first 50 Fibonacci numbers starting with 1 and 2
+//102. print first 50 Fibonacci numbers starting with 1 and 2
 
-//15. find and print sum of even valued terms
+//103. find and print sum of even valued terms
 
-//16. find and print first 98 Fibonacci numbers, starting with 1 and 2
+//104. find and print first 98 Fibonacci numbers, starting with 1 and 2
