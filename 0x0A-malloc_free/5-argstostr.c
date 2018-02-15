@@ -44,11 +44,11 @@ char *argstostr(int ac, char **av)
 		return (NULL);
 /*calculate total length of all command-line arguments*/
 	length = _strlenCon(ac, av);
-/*make new array containing all commandline arguments + newline*/
+/*make new array containing all commandline arguments + #newlines + \0*/
 	conarray = malloc(sizeof(char) * (length + ac + 1));
 	if (conarray == NULL)
 		return (NULL);
-/*fill in new array with characters from arguments*/
+/*assign new array with characters from arguments*/
 	for (i = 0; i < ac; i++)
 	{
 		for (j = 0; av[i][j] != '\0'; j++)
