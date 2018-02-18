@@ -7,3 +7,5 @@
 //2. allocates memory for an array using malloc
 
 //3. create an array of integers
+
+//100. reallocates a memory block using malloc and free
