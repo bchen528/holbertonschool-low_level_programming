@@ -10,4 +10,4 @@
 
 //4. a function that creates a new dog
 
-//5. function that frees dogs
+//5. a function that frees dogs
