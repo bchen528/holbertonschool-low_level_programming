@@ -14,10 +14,10 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	va_list valist;
 	unsigned int i;
 
-	va_start(valist, n);
-
 	if (separator == NULL)
 		separator = "";
+
+	va_start(valist, n);
 
 	for (i = 0; i < n; i++)
 	{
