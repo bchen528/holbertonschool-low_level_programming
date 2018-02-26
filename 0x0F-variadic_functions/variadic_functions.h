@@ -1,6 +1,17 @@
 #ifndef YOGURT
 #define YOGURT
 #include <stdarg.h>
+
+/**
+ * struct all - structure for all data types
+ * @all: character representing datatype
+ * @f: printf function for specific datatype
+ *
+ * Description: struct all contains characters that
+ * represent datatypes and function pointers that
+ * point to a printf function for corresponding data type
+ */
+
 typedef struct all
 {
 	char *all;
