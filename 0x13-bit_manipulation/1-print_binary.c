@@ -10,6 +10,8 @@ void print_binary(unsigned long int n)
 	unsigned int mask;
 	int first_one = 0;
 
+	if (n == NULL)
+		return;
 /*create mask*/
 	mask = 0;
 	mask = ~mask;
