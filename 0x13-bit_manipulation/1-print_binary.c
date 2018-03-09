@@ -10,19 +10,11 @@ void print_binary(unsigned long int n)
 	unsigned int mask;
 	int first_one = 0;
 
-	if (n == NULL)
-		return;
 /*create mask*/
 	mask = 0;
 	mask = ~mask;
 	mask = mask >> 1;
-	mask = ~(mask);
-
-	if (n == 0)
-	{
-		_putchar('0');
-		return;
-	}
+	mask = ~mask;
 
 	while (mask > 0)
 	{
@@ -38,4 +30,6 @@ void print_binary(unsigned long int n)
 		}
 		mask = mask >> 1;
 	}
+	if (first_one == 0)
+		_putchar('0');
 }
