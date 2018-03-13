@@ -1,6 +1,6 @@
 # 0x14. C - File I/O
 
-0. reads a text file and prints it to POSIX standard output.
+0. reads a text file and prints it to POSIX standard output
 
 1. creates a file
 
