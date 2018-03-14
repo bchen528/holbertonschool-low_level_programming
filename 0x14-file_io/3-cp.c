@@ -20,15 +20,16 @@ int main(int argc, char *argv[])
 /*open file_from*/
 	fd1 = open(argv[1], O_RDONLY);
 
-	if (argv[1] == NULL)
+	if (fd1 == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
 
 /*create and/or open file_to*/
-	fd2 = open(argv[2], O_RDWR | O_CREAT | O_TRUNC, 0664);
-	if (argv[2] == NULL)
+	fd2 = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
+
+	if (fd2 == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[2]);
 		exit(99);
@@ -36,7 +37,7 @@ int main(int argc, char *argv[])
 
 /*read text from file_from*/
 /*write contents from file_from to file_to*/
-	while ((actual = read(fd1, buf, 1024)) != 0)
+	while ((actual = read(fd1, buf, 1024)) > 0)
 	{
 		if (actual == -1)
 			exit(98);
@@ -47,15 +48,13 @@ int main(int argc, char *argv[])
 	}
 
 /*close files*/
-	cl1 = close(fd1);
-	if (cl1 == -1)
+	if (close(fd1) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd1\n");
 		exit(100);
 	}
 
-	cl2 = close(fd2);
-	if (cl2 == -1)
+	if (close(fd2) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd2\n");
 		exit(100);
