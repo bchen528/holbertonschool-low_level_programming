@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 	}
 
 /*create and/or open file_to*/
-	fd2 = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
+	fd2 = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 
 	if (fd2 == -1)
 	{
