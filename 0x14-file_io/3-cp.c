@@ -2,8 +2,8 @@
 
 /**
  * main - main function
- * @ac: number of commandline arguments
- * @av: commandline argument
+ * @argcc: number of commandline arguments
+ * @argv: commandline argument
  * Return: Always 0.
  */
 int main(int argc, char *argv[])
