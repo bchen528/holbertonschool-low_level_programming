@@ -37,8 +37,10 @@ int main(int argc, char *argv[])
 
 /*read text from file_from*/
 /*write contents from file_from to file_to*/
-	while ((actual = read(fd1, buf, 1024)) > 0)
+	actual = 1024;
+	while (actual == 1024)
 	{
+		actual = read(fd1, buf, 1024);
 		if (actual == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
