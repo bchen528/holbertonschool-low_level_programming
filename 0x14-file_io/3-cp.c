@@ -40,11 +40,16 @@ int main(int argc, char *argv[])
 	while ((actual = read(fd1, buf, sizeof(buf))) > 0)
 	{
 		if (actual == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 			exit(98);
-
+		}
 		var_write = write(fd2, buf, actual);
 		if (var_write == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			exit(99);
+		}
 	}
 
 /*close files*/
