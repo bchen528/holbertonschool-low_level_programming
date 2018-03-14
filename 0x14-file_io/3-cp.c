@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
 
 /*read text from file_from*/
 /*write contents from file_from to file_to*/
-	while ((actual = read(fd1, buf, 1024)) > 0)
+	while ((actual = read(fd1, buf, sizeof(buf))) > 0)
 	{
 		if (actual == -1)
 			exit(98);
