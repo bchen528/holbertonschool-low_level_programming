@@ -8,13 +8,13 @@
  */
 int main(int argc, char *argv[])
 {
-	int fd1, fd2, actual, var_write;
+	int fd1, fd2, actual, var_write, cl1, cl2;
 	char buf[1024];
 
 	if (argc != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-		exit (97);
+		exit(97);
 	}
 
 /*open file_from*/
@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 	if (argv[1] == NULL)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		exit (98);
+		exit(98);
 	}
 
 /*create and/or open file_to*/
@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 	if (argv[2] == NULL)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[2]);
-		exit (99);
+		exit(99);
 	}
 
 /*read text from file_from*/
@@ -46,16 +46,18 @@ int main(int argc, char *argv[])
 			exit(99);
 	}
 
-	if (close(fd1) == -1)
+	cl1 = close(fd1);
+	cl2 = close(fd2);
+	if (cl1 == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd1\n");
-		exit (100);
+		exit(100);
 	}
 
-	if (close(fd2) == -1)
+	if (cl2 == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd2\n");
-		exit (100);
+		exit(100);
 	}
 	return (0);
 }
