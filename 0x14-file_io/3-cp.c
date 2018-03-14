@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 
 	if (fd2 == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[2]);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
 
@@ -53,15 +53,15 @@ int main(int argc, char *argv[])
 	}
 
 /*close files*/
-	if (close(fd1) == -1)
+	if ((close(fd1)) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd1\n");
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd1);
 		exit(100);
 	}
 
-	if (close(fd2) == -1)
+	if ((close(fd2)) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd2\n");
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd2);
 		exit(100);
 	}
 	return (0);
