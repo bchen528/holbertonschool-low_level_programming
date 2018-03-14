@@ -2,7 +2,7 @@
 
 /**
  * main - main function
- * @argcc: number of commandline arguments
+ * @argc: number of commandline arguments
  * @argv: commandline argument
  * Return: Always 0.
  */
@@ -46,14 +46,15 @@ int main(int argc, char *argv[])
 			exit(99);
 	}
 
+/*close files*/
 	cl1 = close(fd1);
-	cl2 = close(fd2);
 	if (cl1 == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd1\n");
 		exit(100);
 	}
 
+	cl2 = close(fd2);
 	if (cl2 == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd2\n");
