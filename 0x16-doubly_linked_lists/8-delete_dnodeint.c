@@ -15,20 +15,20 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	dlistint_t *previous = NULL;
 	unsigned int count = 0;
 
-	if (*head == NULL && head == NULL)
+	if (head == NULL)
 		return (-1);
 
 	current = *head;
 
 /*delete first node*/
-	if (index == 0 && current != NULL)
+	if (current != NULL && index == 0)
 	{
 		*head = current->next;
 		free(current);
 		return (1);
 	}
 /*move to index position*/
-	while (count < index && current != NULL)
+	while (current != NULL && count < index)
 	{
 		if (count == index - 1)
 			previous = current;
