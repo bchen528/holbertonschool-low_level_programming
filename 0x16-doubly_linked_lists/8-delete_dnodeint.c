@@ -8,10 +8,14 @@
  * Return: 1 if it succeeded, -1 if it failed
  */
 
-int delete_beginning(dlistint_t **head, dlistint_t *current)
+int delete_beginning(dlistint_t **head)
 {
-	*head = current->next;
-	free(current);
+	dlistint_t *deleteMe = NULL;
+
+	deleteMe = *head;
+
+	*head = (*head)->next;
+	free(deleteMe);
 	return (1);
 }
 
@@ -55,7 +59,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 
 /*delete first node*/
 	if (index == 0)
-		return (delete_beginning(head, current));
+		return (delete_beginning(head));
 /*move to index position*/
 	while (count < index && current != NULL)
 	{
