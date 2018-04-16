@@ -36,6 +36,7 @@ int delete_end(dlistint_t *current)
 	free(deleteMe);
 	return (1);
 }
+
 /**
  * delete_dnodeint_at_index - deletes the node at index of a
  * dlistint_t linked list
@@ -48,7 +49,6 @@ int delete_end(dlistint_t *current)
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
 	dlistint_t *current = NULL;
-	dlistint_t *previous = NULL;
 	unsigned int count = 0;
 
 	if (*head == NULL || head == NULL)
@@ -62,8 +62,6 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 /*move to index position*/
 	while (count < index && current != NULL)
 	{
-		if (count == index - 1)
-			previous = current;
 		count++;
 		current = current->next;
 	}
@@ -75,8 +73,8 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	if (current->next == NULL)
 		return (delete_end(current));
 /*delete middle node*/
-	previous->next = current->next;
-	(current->next)->prev = previous;
+	current->prev->next = current->next;
+	current->next->prev = current->prev;
 	free(current);
 	return (1);
 }
