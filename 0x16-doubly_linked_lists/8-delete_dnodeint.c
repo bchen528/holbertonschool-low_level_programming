@@ -24,9 +24,13 @@ int delete_beginning(dlistint_t **head, dlistint_t *current)
 
 int delete_end(dlistint_t *current)
 {
+	dlistint_t *deleteMe = NULL;
+
+	deleteMe = current;
+
 	current = current->prev;
 	current->next = NULL;
-	free(current);
+	free(deleteMe);
 	return (1);
 }
 /**
