@@ -12,8 +12,9 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	hash_node_t *new = NULL;
-	const unsigned char *tmp_key;
-	int index;
+	const unsigned char *tmp_key = (const unsigned char *)(key);
+	int index = key_index(tmp_key, ht->size);
+
 
 	if (ht == NULL)
 		return (0);
@@ -30,8 +31,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	new->next = NULL;
 
 /*collision*/
-	tmp_key = (const unsigned char *)(key);
-	index = key_index(tmp_key, ht->size);
 	if (ht->array[index] != NULL)
 		new->next = ht->array[index];
 
