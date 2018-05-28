@@ -50,15 +50,19 @@ void insertion_sort_list(listint_t **list)
 	while (first != last)
 	{
 		second = first->next;
+		if (second == NULL)
+			return;
 		/*check values before*/
-		while (second->prev != NULL && (second->prev->n > second->n))
+		while (second->prev != NULL &&
+		       (second->prev->n > second->n))
 		{
 			/*insert at beginning*/
 			if (second->prev == head)
 			{
 				if (flag == 0)
 				{
-					second->next->prev = first;
+					if (second->next != NULL)
+						second->next->prev = first;
 					second->prev = NULL;
 					first->next = second->next;
 					first->prev = second;
@@ -70,7 +74,8 @@ void insertion_sort_list(listint_t **list)
 				}
 				else
 				{
-					second->next->prev = head;
+					if (second->next != NULL)
+						second->next->prev = head;
 					second->prev = NULL;
 					head->next = second->next;
 					head->prev = second;
