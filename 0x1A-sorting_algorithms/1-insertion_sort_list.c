@@ -9,15 +9,22 @@
 
 int get_count(listint_t *h)
 {
+	listint_t *runner = NULL;
 	int numNodes = 0;
 
-	while (h != NULL)
+	if (h == NULL)
+		return (0);
+
+	runner = h;
+
+	while (runner != NULL)
 	{
 		numNodes++;
-		h = h->next;
+		runner = runner->next;
 	}
 	return (numNodes);
 }
+
 /**
  * insertion_sort_list - sorts a doubly linked list of
  * integers in ascending order using the Insertion sort algorithm
@@ -31,7 +38,7 @@ void insertion_sort_list(listint_t **list)
 	listint_t *second = NULL;
 	listint_t *head = NULL;
 	listint_t *last = NULL;
-	int flag = 0;
+	int flag, g = 0;
 
 	if (list == NULL || (*list) == NULL || get_count((*list)) < 2)
 		return;
