@@ -38,7 +38,7 @@ void insertion_sort_list(listint_t **list)
 	listint_t *second = NULL;
 	listint_t *head = NULL;
 	listint_t *last = NULL;
-	int flag, g = 0;
+	int flag = 0;
 
 	if (list == NULL || (*list) == NULL || get_count((*list)) < 2)
 		return;
