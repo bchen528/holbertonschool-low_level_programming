@@ -65,8 +65,7 @@ void shell_sort(int *array, size_t size)
 			end = i + gap;
 		}
 		i = 0;
-		gap = gap / 2;
-		if (gap != 1)
-			print_array(array, size);
+		gap = (gap - 1) / 3;
+		print_array(array, size);
 	}
 }
