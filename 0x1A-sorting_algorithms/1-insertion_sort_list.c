@@ -1,6 +1,24 @@
 #include "sort.h"
 
 /**
+ * get_count - count number of nodes in DLL
+ *
+ * @h: doubly linked list
+ * Return: number of nodes
+ */
+
+int get_count(listint_t *h)
+{
+	int numNodes = 0;
+
+	while (h != NULL)
+	{
+		numNodes++;
+		h = h->next;
+	}
+	return (numNodes);
+}
+/**
  * insertion_sort_list - sorts a doubly linked list of
  * integers in ascending order using the Insertion sort algorithm
  *
@@ -15,7 +33,7 @@ void insertion_sort_list(listint_t **list)
 	listint_t *last = NULL;
 	int flag = 0;
 
-	if (list == NULL)
+	if (list == NULL || (*list) == NULL || get_count((*list)) < 2)
 		return;
 
 	head = *list;
