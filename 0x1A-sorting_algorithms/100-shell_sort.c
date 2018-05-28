@@ -32,7 +32,7 @@ void shell_sort(int *array, size_t size)
 	int i = 0, j = 0;
 	size_t end;
 
-	if (array == NULL || size == 0)
+	if (array == NULL || size < 2)
 		return;
 
 	while (gap < (int)size)
