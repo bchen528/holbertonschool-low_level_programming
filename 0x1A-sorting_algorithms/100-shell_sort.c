@@ -54,11 +54,12 @@ void shell_sort(int *array, size_t size)
 				j = i;
 				while (j - gap >= 0)
 				{
-					if (array[j - gap] > array[j])
+					if (j > gap - 1 &&
+					    array[j - gap] >= array[j])
 						swap(array, j - gap, j);
 					else
 						break;
-					j--;
+					j = j - gap;
 				}
 			}
 			i++;
