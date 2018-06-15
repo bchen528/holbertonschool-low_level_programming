@@ -1,0 +1,20 @@
+#build an executable name holberton from main.c and holberton.c
+CC = gcc
+SRC = main.c holberton.c
+OBJ = $(SRC:.c=.o)
+NAME = holberton
+
+all: $(OBJ) #all .o files
+	$(CC) $(OBJ) -o $(NAME)
+
+clean:
+	$(RM) *~ $(NAME)
+
+oclean:
+	$(RM) *.o
+
+fclean:
+	$(RM) *.o *.~ $(NAME)
+
+re:
+	$(CC) $(OBJ) -o $(NAME)
