@@ -1,4 +1,4 @@
-#build an executable name holberton from main.c
+#build an executable name holberton from main.c and holberton.c
 all: holberton
 
 holberton: main.c holberton.c
