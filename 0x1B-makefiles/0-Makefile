@@ -1,0 +1,5 @@
+#build an executable name holberton from main.c
+all: holberton
+
+holberton: main.c holberton.c
+	gcc main.c holberton.c -o holberton
