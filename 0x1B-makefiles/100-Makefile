@@ -4,7 +4,6 @@ SRC = main.c holberton.c
 OBJ = $(SRC:.c=.o)
 NAME = holberton
 CFLAGS = -Wall -Werror -Wextra -pedantic
-RM = rm -f
 
 .PHONY: all
 all: $(OBJ) #all .o files
