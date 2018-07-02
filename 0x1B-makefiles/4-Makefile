@@ -4,9 +4,10 @@ SRC = main.c holberton.c
 OBJ = $(SRC:.c=.o)
 NAME = holberton
 RM = rm -f
+CFLAGS = -Wall -Werror -Wextra -pedantic
 
 all: $(OBJ) #all .o files
-	$(CC) $(OBJ) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 clean:
 	$(RM) *~ $(NAME)
