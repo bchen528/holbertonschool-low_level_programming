@@ -1,29 +1,6 @@
 #include "binary_trees.h"
 
 /**
- * binary_tree_balance - measure the balance factor of a binary tree
- * @tree: pointer to root node
- * Return: balance factor of tree
- */
-int binary_tree_balance(const binary_tree_t *tree)
-{
-	int left;
-	int right;
-	int balance = 0;
-
-	if (tree == NULL)
-		return (0);
-	left = binary_tree_height(tree->left);
-	right = binary_tree_height(tree->right);
-	if (!tree->left)
-		left--;
-	if (!tree->right)
-		right--;
-	balance = left - right;
-	return (balance);
-}
-
-/**
  * binary_tree_height - finds the height of a binary tree
  * @tree: pointer to root node
  * Return: height of tree
@@ -47,22 +24,6 @@ size_t binary_tree_height(const binary_tree_t *tree)
 }
 
 /**
- * perfect_helper - check if binary tree is full
- * @tree: pointer to root node
- * Return: 1 if the tree is full or 0 if tree is not full
- */
-int perfect_helper(const binary_tree_t *tree)
-{
-	if (!tree)
-		return (0);
-
-	if (tree->left && tree->right)
-		return (1);
-	return (perfect_helper(tree->left) &&
-		perfect_helper(tree->right));
-}
-
-/**
  * binary_tree_leaves - checks if a node is a leaf
  *
  * @tree: pointer to the root node
@@ -79,6 +40,25 @@ size_t binary_tree_leaves(const binary_tree_t *tree)
 }
 
 /**
+ * power - calculate base/exponent expression
+ *
+ * @base: base number
+ * @exp: exponent
+ * Return: resulting calculation
+ */
+size_t power(size_t base, size_t exp)
+{
+	size_t result = 1;
+
+	while (exp != 0)
+	{
+		result *= base;
+		exp--;
+	}
+	return (result);
+}
+
+/**
  * binary_tree_is_perfect - checks if a binary tree is perfect
  *
  * @tree: pointer to the root node of the tree to check
@@ -86,24 +66,16 @@ size_t binary_tree_leaves(const binary_tree_t *tree)
  */
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
-	if (!tree)
-		return (0);
-	if (perfect_helper(tree) == 1 && binary_tree_balance(tree) == 0)
-		return (1);
-	return (0);
-}
-/*	size_t height;
+	size_t height, test_num_leaves, real_num_leaves;
 
 	if (!tree)
 		return (0);
 
 	height = binary_tree_height(tree);
+	test_num_leaves = power(2, height);
+	real_num_leaves = binary_tree_leaves(tree);
 
-	if (tree->left && tree->right)
-	{
-		if (binary_tree_leaves(tree->left) == height
-		    && binary_tree_leaves(tree->right) == height)
-			return (1);
-	}
+	if (test_num_leaves == real_num_leaves)
+		return (1);
 	return (0);
-*/
+}
