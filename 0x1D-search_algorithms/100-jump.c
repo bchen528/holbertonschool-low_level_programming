@@ -34,7 +34,7 @@ int jump_search(int *array, size_t size, int value)
 		i = i + jump_size;
 	}
 
-	/*perform linear search backwards*/
+	/*perform linear search in block*/
 	if (i > size || array[i] >= value)
 	{
 		printf("Value found between indexes [%d] and [%d]\n",
