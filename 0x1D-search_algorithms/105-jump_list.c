@@ -15,7 +15,7 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 	size_t jump_size, i;
 	listint_t *temp = NULL;
 
-	if (list == NULL)
+	if (list == NULL || size == 0)
 		return (NULL);
 
 	/*find jump size*/
@@ -88,7 +88,7 @@ listint_t *jumplist_linear_search(listint_t *list, size_t start, size_t size,
 	size_t i;
 	listint_t *temp = NULL;
 
-	if (list == NULL)
+	if (list == NULL || size == 0)
 		return (NULL);
 
 	temp = list;
