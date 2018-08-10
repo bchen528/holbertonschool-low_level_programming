@@ -98,7 +98,7 @@ listint_t *jumplist_linear_search(listint_t *list, size_t start, size_t size,
 
 	for (i = start - jump_size - 1; temp != NULL && i < size; i++)
 	{
-		printf("Value checked array [%d] = [%d]\n",
+		printf("Value checked at index [%d] = [%d]\n",
 		       (int)temp->index, temp->n);
 		if (temp->n == value)
 			return (temp);
