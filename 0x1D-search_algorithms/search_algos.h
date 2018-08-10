@@ -53,8 +53,8 @@ int find_min(int a, int b);
 int advanced_binary(int *array, size_t size, int value);
 int adv_bin_helper(int *array, size_t start, size_t end, int value);
 listint_t *jump_list(listint_t *list, size_t size, int value);
-listint_t *jumplist_linear_search(listint_t *list, size_t start, size_t size,
-				  size_t jump_size, int value);
+listint_t *jumplist_linear_search(listint_t *list, size_t start,
+				  size_t size, int value);
 skiplist_t *linear_skip(skiplist_t *list, int value);
 size_t list_len(skiplist_t *h);
 #endif /*__SEARCH__*/
