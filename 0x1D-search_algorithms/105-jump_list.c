@@ -13,7 +13,7 @@
 listint_t *jump_list(listint_t *list, size_t size, int value)
 {
 	size_t jump_size, i;
-	listint_t *temp = NULL;
+	listint_t *curr = NULL, *prev = NULL;
 
 	if (list == NULL)
 		return (NULL);
@@ -21,49 +21,49 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 	/*find jump size*/
 	jump_size = sqrt(size);
 
-	temp = list;
+	curr = list;
+	prev = list;
 	i = 0;
 
-	while (temp != NULL && i < jump_size)
+	while (curr != NULL && i < jump_size)
 	{
-		temp = temp->next;
+		curr = curr->next;
 		i++;
 	}
 
 	/*find jump block containing target value*/
-	while (temp != NULL && temp->n < value)
+	while (curr != NULL && curr->n < value)
 	{
 		printf("Value checked at index [%d] = [%d]\n",
-		       (int)temp->index, temp->n);
-		if (temp->n == value)
+		       (int)curr->index, curr->n);
+		if (curr->n == value)
 		{
 			printf("Value found between indexes [%d] and [%d]\n",
-			       (int)(temp->index - jump_size),
-			       (int)temp->index);
-			return (temp);
+			       (int)(prev->index),
+			       (int)curr->index);
+			return (curr);
 		}
-		else if (temp->next == NULL)
+		else if (curr->next == NULL)
 		{
 			printf("Value found between indexes [%d] and [%d]\n",
-			       (int)(temp->index - jump_size + 1),
-			       (int)temp->index);
-			return (jumplist_linear_search(list, temp->index + 2,
-						       size, jump_size, value));
+			       (int)(prev->index),
+			       (int)curr->index);
+			return (jumplist_linear_search(list, prev->index,
+						       size, value));
 		}
-
-		for (i = 0; temp->next != NULL && i < jump_size; i++)
-			temp = temp->next;
+		prev = curr;
+		for (i = 0; curr->next != NULL && i < jump_size; i++)
+			curr = curr->next;
 	}
 
 	/*perform linear search in block*/
-	if (temp->index >= size || temp->n >= value)
+	if (curr->index >= size || curr->n >= value)
 	{
 		printf("Value checked at index [%d] = [%d]\n",
-		       (int)temp->index, temp->n);
+		       (int)curr->index, curr->n);
 		printf("Value found between indexes [%d] and [%d]\n",
-		       (int)(temp->index - jump_size), (int)temp->index);
-		return (jumplist_linear_search(list, temp->index + 1, size,
-					       jump_size, value));
+		       (int)(curr->index - jump_size), (int)curr->index);
+		return (jumplist_linear_search(list, prev->index, size, value));
 	}
 	return (NULL);
 }
@@ -75,15 +75,14 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
  * @list: a pointer to the first element of the array to search in
  * @start: index of upper end of jump block + 1
  * @size: number of elements in array from breakpoint
- * @jump_size: window size when interating through array
  * @value: value to search for
  * Return:  first index where value is located or -1 if value is not present
  * in array or if array is NULL
  */
 
 
-listint_t *jumplist_linear_search(listint_t *list, size_t start, size_t size,
-				  size_t jump_size, int value)
+listint_t *jumplist_linear_search(listint_t *list, size_t start,
+				  size_t size, int value)
 {
 	size_t i;
 	listint_t *temp = NULL;
@@ -92,10 +91,11 @@ listint_t *jumplist_linear_search(listint_t *list, size_t start, size_t size,
 		return (NULL);
 
 	temp = list;
-	for (i = 0; temp != NULL && i < start - jump_size - 1; i++)
+
+	for (i = 0; temp != NULL && temp->index < start; i++)
 		temp = temp->next;
 
-	for (i = start - jump_size - 1; temp != NULL && i < size; i++)
+	for (i = temp->index; temp != NULL && i < size; i++)
 	{
 		printf("Value checked at index [%d] = [%d]\n",
 		       (int)temp->index, temp->n);
