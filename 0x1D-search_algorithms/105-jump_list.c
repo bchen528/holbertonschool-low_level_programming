@@ -31,7 +31,7 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 	}
 
 	/*find jump block containing target value*/
-	while (temp != NULL && temp->n < value)
+	while (temp != NULL && temp->n <= value)
 	{
 		printf("Value checked at index [%d] = [%d]\n",
 		       (int)temp->index, temp->n);
@@ -57,7 +57,7 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 	}
 
 	/*perform linear search in block*/
-	if (temp->index >= size || temp->n >= value)
+	if (temp->index >= size || temp->n > value)
 	{
 		printf("Value checked at index [%d] = [%d]\n",
 		       (int)temp->index, temp->n);
