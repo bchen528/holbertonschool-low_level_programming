@@ -12,7 +12,7 @@
 		E5A524292161B9EE0074FBF5 /* SDL2_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5A524252161B9EE0074FBF5 /* SDL2_ttf.framework */; };
 		E5A5242A2161B9EE0074FBF5 /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5A524262161B9EE0074FBF5 /* SDL2_image.framework */; };
 		E5A5242B2161B9EE0074FBF5 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5A524272161B9EE0074FBF5 /* SDL2.framework */; };
-		E5A524E22162BC370074FBF5 /* easycg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E5A524E02162BC370074FBF5 /* easycg.cpp */; };
+		E5A524F121635ACC0074FBF5 /* easycg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E5A524F021635AC90074FBF5 /* easycg.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,11 +34,12 @@
 		E5A524252161B9EE0074FBF5 /* SDL2_ttf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_ttf.framework; path = ../../../../Library/Frameworks/SDL2_ttf.framework; sourceTree = "<group>"; };
 		E5A524262161B9EE0074FBF5 /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = ../../../../Library/Frameworks/SDL2_image.framework; sourceTree = "<group>"; };
 		E5A524272161B9EE0074FBF5 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
-		E5A524E02162BC370074FBF5 /* easycg.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = easycg.cpp; path = "../../InstantCG-master/easycg.cpp"; sourceTree = "<group>"; };
-		E5A524E12162BC370074FBF5 /* easycg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = easycg.h; path = "../../InstantCG-master/easycg.h"; sourceTree = "<group>"; };
 		E5A524E6216313A50074FBF5 /* snow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snow.png; sourceTree = "<group>"; };
 		E5A524E7216313A50074FBF5 /* concrete_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = concrete_black.png; sourceTree = "<group>"; };
 		E5A524E8216313A50074FBF5 /* observer_front.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = observer_front.png; sourceTree = "<group>"; };
+		E5A524EE21635A750074FBF5 /* easycg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = easycg.h; sourceTree = "<group>"; };
+		E5A524F021635AC90074FBF5 /* easycg.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = easycg.cpp; sourceTree = "<group>"; };
+		E5A524F321635AF50074FBF5 /* spooky.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = spooky.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +60,8 @@
 		E5A5240E2161B9B40074FBF5 = {
 			isa = PBXGroup;
 			children = (
-				E5A524192161B9B40074FBF5 /* cg_maze */,
+				E5A524192161B9B40074FBF5 /* src */,
+				E5A524ED21635A510074FBF5 /* headers */,
 				E5A524E4216313A50074FBF5 /* dependencies */,
 				E5A524182161B9B40074FBF5 /* Products */,
 				E5A524212161B9D80074FBF5 /* Frameworks */,
@@ -74,14 +76,13 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E5A524192161B9B40074FBF5 /* cg_maze */ = {
+		E5A524192161B9B40074FBF5 /* src */ = {
 			isa = PBXGroup;
 			children = (
 				E5A5241A2161B9B40074FBF5 /* main.cpp */,
-				E5A524E02162BC370074FBF5 /* easycg.cpp */,
-				E5A524E12162BC370074FBF5 /* easycg.h */,
+				E5A524F021635AC90074FBF5 /* easycg.cpp */,
 			);
-			path = cg_maze;
+			path = src;
 			sourceTree = "<group>";
 		};
 		E5A524212161B9D80074FBF5 /* Frameworks */ = {
@@ -117,8 +118,17 @@
 		E5A524E9216313A50074FBF5 /* audio */ = {
 			isa = PBXGroup;
 			children = (
+				E5A524F321635AF50074FBF5 /* spooky.mp3 */,
 			);
 			path = audio;
+			sourceTree = "<group>";
+		};
+		E5A524ED21635A510074FBF5 /* headers */ = {
+			isa = PBXGroup;
+			children = (
+				E5A524EE21635A750074FBF5 /* easycg.h */,
+			);
+			path = headers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,7 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5A5241B2161B9B40074FBF5 /* main.cpp in Sources */,
-				E5A524E22162BC370074FBF5 /* easycg.cpp in Sources */,
+				E5A524F121635ACC0074FBF5 /* easycg.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
