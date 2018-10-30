@@ -1,39 +1,43 @@
 # 0x1C-binary_trees
 
-0. creates a binary tree node
+Binary tree algorithms practice.
 
-1. inserts a node as the left-child of another node
+[0-binary_tree_node.c](0-binary_tree_node.c) - creates a binary tree node
 
-2. inserts a node as the right-child of another node
+[1-binary_tree_insert_left.c](1-binary_tree_insert_left.c) - inserts a node as the left-child of another node
 
-3. deletes an entire binary tree
+[2-binary_tree_insert_right.c](2-binary_tree_insert_right.c) - inserts a node as the right-child of another node
 
-4. checks if a node is a leaf
+[3-binary_tree_delete.c](3-binary_tree_delete.c) - deletes an entire binary tree
 
-5. checks if a given node is a root
+[4-binary_tree_is_leaf.c](4-binary_tree_is_leaf.c) - checks if a node is a leaf
 
-6. goes through a binary tree using pre-order traversal
+[5-binary_tree_is_root.c](5-binary_tree_is_root.c) - checks if a given node is a root
 
-7. goes through a binary tree using in-order traversal
+[6-binary_tree_preorder.c](6-binary_tree_preorder.c) - goes through a binary tree using pre-order traversal
 
-8. goes through a binary tree using post-order traversal
+[7-binary_tree_inorder.c](7-binary_tree_inorder.c) - goes through a binary tree using in-order traversal
 
-9. measures the height of a binary tree
+[8-binary_tree_postorder.c](8-binary_tree_postorder.c) - goes through a binary tree using post-order traversal
 
-10. measures the depth of a node in a binary tree
+[9-binary_tree_height.c](9-binary_tree_height.c) - measures the height of a binary tree
 
-11. measures the size of a binary tree
+[10-binary_tree_depth.c](10-binary_tree_depth.c) - measures the depth of a node in a binary tree
 
-12. counts the leaves in a binary tree
+[11-binary_tree_size.c](11-binary_tree_size.c) - measures the size of a binary tree
 
-13. counts the nodes with at least 1 child in a binary tree
+[12-binary_tree_leaves.c](12-binary_tree_leaves.c) - counts the leaves in a binary tree
 
-14. measures the balance factor of a binary tree
+[13-binary_tree_nodes.c](13-binary_tree_nodes.c) - counts the nodes with at least 1 child in a binary tree
 
-15. checks if a binary tree is full
+[14-binary_tree_balance.c](14-binary_tree_balance.c) - measures the balance factor of a binary tree
 
-16. checks if a binary tree is perfect
+[15-binary_tree_is_full.c](15-binary_tree_is_full.c) - checks if a binary tree is full
 
-17. finds the sibling of a node
+[16-binary_tree_is_perfect.c](16-binary_tree_is_perfect.c) - checks if a binary tree is perfect
 
-18. finds the uncle of a node
+[17-binary_tree_sibling.c](17-binary_tree_sibling.c) - finds the sibling of a node
+
+[18-binary_tree_uncle.c](18-binary_tree_uncle.c) - finds the uncle of a node
+
+[100-binary_trees_ancestor.c](100-binary_trees_ancestor.c) - finds the lowest common ancestor of two nodes
